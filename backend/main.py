@@ -4,6 +4,18 @@ from typing import Optional
 from data import AWS_SERVICES, CATEGORIES
 
 app = FastAPI(title="AWS Service Comparison API", version="1.0.0")
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://https://main.d31jztabbbv6yc.amplifyapp.com/",
+        "http://localhost:5173",
+        "http://localhost:3000"
+    ],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.add_middleware(
     CORSMiddleware,
