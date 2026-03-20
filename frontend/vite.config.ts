@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://cloud-comparison-env.eba-3t8mtifs.us-west-2.elasticbeanstalk.com",
         changeOrigin: true,
       },
     },
