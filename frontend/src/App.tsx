@@ -22,11 +22,9 @@ export default function App() {
   useEffect(() => {
     const load = async () => {
       try {
-        const API_BASE = "http://cloud-comparison-env.eba-3t8mtifs.us-west-2.elasticbeanstalk.com";
-
-const [svcRes, catRes] = await Promise.all([
-  fetch(`${API_BASE}/api/services`),
-  fetch(`${API_BASE}/api/categories`),
+        const [svcRes, catRes] = await Promise.all([
+  fetch("https://ir3w6rqkh7.execute-api.us-west-2.amazonaws.com/api/services"),
+  fetch("https://ir3w6rqkh7.execute-api.us-west-2.amazonaws.com/api/categories"),
 ]);
         if (!svcRes.ok || !catRes.ok) throw new Error("Failed to fetch data from API");
         const svcData: ServicesResponse = await svcRes.json();
