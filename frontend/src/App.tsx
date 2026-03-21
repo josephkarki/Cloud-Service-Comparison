@@ -23,8 +23,8 @@ export default function App() {
     const load = async () => {
       try {
         const [svcRes, catRes] = await Promise.all([
-  fetch("https://ir3w6rqkh7.execute-api.us-west-2.amazonaws.com/api/services"),
-  fetch("https://ir3w6rqkh7.execute-api.us-west-2.amazonaws.com/api/categories"),
+  fetch("https://sskdoh56h7.execute-api.us-west-2.amazonaws.com/prod/api/services"),
+  fetch("https://sskdoh56h7.execute-api.us-west-2.amazonaws.com/prod/api/categories"),
 ]);
         if (!svcRes.ok || !catRes.ok) throw new Error("Failed to fetch data from API");
         const svcData: ServicesResponse = await svcRes.json();
